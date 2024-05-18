@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+    <ion-button (click)="goRegister()"> Registrarse </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item lines="none" class="ion-item">
+      <fieldset  class="input-item">
+        <legend>Correo Electrónico</legend> 
+        <ion-input formControlName="email" type="email" placeholder="nombre@dominio.com"></ion-input>
+      </fieldset>
+    </ion-item>
+    <ion-item lines="none" class="ion-item">
+      <fieldset class="input-item">
+        <legend>Contraseña</legend> 
+        <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+      </fieldset>
+    </ion-item>
+    <ion-button class="login-button" type="submit" expand="block">Ingresar</ion-button>
+    <ion-toast color="danger" [isOpen]="isToastOpen" message="Correo o contraseña incorrectos" [duration]="3000" (didDismiss)="setOpen(false)"></ion-toast>
+  </form>
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      +
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="tertiary" (click)="userA()">
+        1
+      </ion-fab-button>
+      <ion-fab-button color="success" (click)="userB()">
+        2
+      </ion-fab-button>
+      <ion-fab-button color="secondary" (click)="userC()">
+        3 
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

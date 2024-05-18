@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    @if(this.authService.currentUserSig() == null)
+    {
+      <ion-buttons slot="end">
+      <ion-button (click)="goLogin()"> Ingresar </ion-button>
+      <ion-button (click)="goRegister()"> Registrarse </ion-button>
+      </ion-buttons>
+    }
+    @if(this.authService.currentUserSig() && !presionado)
+    {
+      <ion-buttons slot="start">
+      <ion-button (click)="logout()"> Salir </ion-button>
+      </ion-buttons>
+    }
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if(this.authService.currentUserSig())
+  {
+    <ion-content [fullscreen]="true" class="background">
+      <div class="center">
+        <button *ngIf="presionado" class="fullscreen-button" (click)="btnActivarODesactivar()" style="background-color: #504444;color: #eb445a;">
+          <ion-icon name="pause"></ion-icon>
+        </button>
+    
+        <button *ngIf="!presionado" class="fullscreen-button" (click)="btnActivarODesactivar()" style="background-color: #504444;color: #eb445a;">
+          <ion-icon  name="alarm"></ion-icon>
+        </button>
+      </div>
+    </ion-content>
+  }
+  @else {
+    <h1>Bienvenido</h1>
+  }
+  
+</ion-content>
