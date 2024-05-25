@@ -40,6 +40,7 @@ export class LoginPage implements OnInit {
     this.authService.login(value.email, value.password).subscribe({
       next:()=>{
       localStorage.setItem('password', value.password);
+      this.form.setValue({email : "", password:""}), 
       this.router.navigateByUrl('/home')},
       error: ()=>{
         this.setOpen(true);
@@ -65,15 +66,15 @@ export class LoginPage implements OnInit {
   }
   userA()
   {
-    this.form.setValue({email : "lucas@gmail.com", password:"lucas123"}); 
+    this.form.setValue({email : "admin@admin.com", password:"111111"}); 
   }
   userB()
   {
-    this.form.setValue({email : "ana@gmail.com", password:"ana123"}); 
+    this.form.setValue({email : "invitado@invitado.com", password:"222222"}); 
   }
   userC()
   {
-    this.form.setValue({email : "juan@gmail.com", password:"juan123"});
+    this.form.setValue({email : "usuario@usuario.com", password:"333333"});
   }
 
 }

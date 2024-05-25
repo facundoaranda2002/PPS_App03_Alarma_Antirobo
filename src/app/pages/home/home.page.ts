@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonButtons, IonIcon, IonNavLink } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonButtons, IonIcon, IonNavLink, IonSpinner } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonNavLink, IonIcon, IonButtons, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonSpinner, IonNavLink, IonIcon, IonButtons, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class HomePage implements OnInit {
 
@@ -77,7 +77,7 @@ export class HomePage implements OnInit {
         this.mensaje("Alarma desactivada","success")
         setTimeout(() => {
           this.parar(); ///Paro la subscripcion al acceleration
-        }, 1000);
+        });
       }else if (this.clave !== ''){
         this.mensaje("Contraseña incorrecta","error")
 

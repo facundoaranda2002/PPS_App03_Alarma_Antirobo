@@ -8,6 +8,7 @@
 
 <ion-content [fullscreen]="true">
 
+  <h1>Registrese</h1>
   <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <ion-item lines="none" class="ion-item">
       <fieldset  class="input-item">
@@ -30,4 +31,6 @@
     <ion-button class="login-button" type="submit" expand="block">Registrarse</ion-button>
     <ion-toast color="danger" [isOpen]="isToastOpen" message="Correo o contraseña invalidas" [duration]="3000" (didDismiss)="setOpen(false)"></ion-toast>
   </form>
+
+  <img src="../../../assets/ladron.png" alt="ladron">
 </ion-content>

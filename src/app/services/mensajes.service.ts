@@ -15,7 +15,7 @@ export class MensajesService {
 
   showMessage(mensaje: string, clase: string) {
     this.snackBar.open(mensaje, '', {
-      duration: 5000, // Duración en milisegundos
+      duration: 3000, // Duración en milisegundos
       panelClass: [clase],
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,

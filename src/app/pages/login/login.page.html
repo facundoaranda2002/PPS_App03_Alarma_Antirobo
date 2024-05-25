@@ -8,6 +8,7 @@
 
 <ion-content [fullscreen]="true">
 
+  <h1>Ingrese</h1>
   <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <ion-item lines="none" class="ion-item">
       <fieldset  class="input-item">
@@ -25,6 +26,7 @@
     <ion-toast color="danger" [isOpen]="isToastOpen" message="Correo o contraseña incorrectos" [duration]="3000" (didDismiss)="setOpen(false)"></ion-toast>
   </form>
 
+  <img src="../../../assets/ladron.png" alt="ladron">
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button>

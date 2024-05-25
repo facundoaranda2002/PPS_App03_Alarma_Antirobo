@@ -19,20 +19,24 @@
 <ion-content [fullscreen]="true">
   @if(this.authService.currentUserSig())
   {
-    <ion-content [fullscreen]="true" class="background">
-      <div class="center">
-        <button *ngIf="presionado" class="fullscreen-button" (click)="btnActivarODesactivar()" style="background-color: #504444;color: #eb445a;">
-          <ion-icon name="pause"></ion-icon>
-        </button>
+    @defer {
+      
+        <div class="center">
+          <button *ngIf="presionado" class="fullscreen-button-pause" (click)="btnActivarODesactivar()" style="background-color: #148cee;color: #eb445a;">
+            <ion-icon name="alarm"></ion-icon>
+          </button>
+      
+          <button *ngIf="!presionado" class="fullscreen-button-play" (click)="btnActivarODesactivar()" style="background-color: #148cee;color: #23f150;">
+            <ion-icon  name="play"></ion-icon>
+          </button>
+        </div>
+      
+    } @placeholder {
+      <ion-spinner class="spinner" name="circular"></ion-spinner>
+    } @loading (minimum 2s) {
+      <ion-spinner class="spinner" name="circular"></ion-spinner>
+    }
     
-        <button *ngIf="!presionado" class="fullscreen-button" (click)="btnActivarODesactivar()" style="background-color: #504444;color: #eb445a;">
-          <ion-icon  name="alarm"></ion-icon>
-        </button>
-      </div>
-    </ion-content>
-  }
-  @else {
-    <h1>Bienvenido</h1>
   }
   
 </ion-content>
